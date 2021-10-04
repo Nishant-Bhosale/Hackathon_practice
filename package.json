@@ -1,11 +1,11 @@
 {
-	"name": "hackathon",
+	"name": "arcadian",
 	"version": "1.0.0",
-	"description": "",
+	"description": "The platform to express yourself online",
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"server": "nodemon server",
+		"server": "nodemon backend/server.js",
 		"client": "npm start --prefix frontend",
 		"dev": "concurrently \"npm run server\" \"npm run client\""
 	},
