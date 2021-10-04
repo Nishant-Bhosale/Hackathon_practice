@@ -5,11 +5,18 @@ const asyncHandler = require("express-async-handler");
 // @route /signup
 // @access Public
 const createUser = asyncHandler(async (req, res) => {
-	const { name, email, password } = req.body;
+	const { name, email, password, phone, age, gender } = req.body;
 
-	if (!name) {
+	if (
+		!name ||
+		!(
+			gender.toLowerCase() === "male" ||
+			gender.toLowerCase() === "female" ||
+			gender.toLowerCase() === "other"
+		)
+	) {
 		res.status(404);
-		throw new Error("Name is required");
+		throw new Error("Please provide valid details");
 	}
 
 	const isUser = await User.findOne({ email });
@@ -23,6 +30,9 @@ const createUser = asyncHandler(async (req, res) => {
 		name,
 		email,
 		password,
+		gender,
+		age,
+		phone: phone ? phone : null,
 	});
 
 	const token = await user.generateAuthToken();
@@ -48,6 +58,9 @@ const loginUser = asyncHandler(async (req, res) => {
 	res.status(200).json({
 		name: user.name,
 		email: user.email,
+		phone: user.phone,
+		gender: user.gender,
+		age: user.age,
 		token,
 	});
 });
@@ -67,8 +80,9 @@ const getUserProfile = asyncHandler(async (req, res) => {
 		_id: user._id,
 		name: user.name,
 		email: user.email,
-		headline: user.headline,
-		isInstructor: user.isInstructor,
+		age: user.age,
+		phone: user.phone,
+		gender: user.gender,
 	});
 });
 
@@ -78,11 +92,13 @@ const getUserProfile = asyncHandler(async (req, res) => {
 const updateUserProfile = asyncHandler(async (req, res) => {
 	const user = await User.findById(req.user._id);
 
-	const { name, email } = req.body;
+	const { name, email, phone, age } = req.body;
 
 	if (user) {
 		user.name = name || user.name;
 		user.email = email || user.email;
+		user.age = age || user.age;
+		user.phone = phone || user.phone;
 
 		if (req.body.password) {
 			user.password = req.body.password;
@@ -93,6 +109,9 @@ const updateUserProfile = asyncHandler(async (req, res) => {
 			_id: user._id,
 			name: user.name,
 			email: user.email,
+			age: user.age,
+			phone: user.phone,
+			gender: user.gender,
 		});
 	} else {
 		res.status(404);

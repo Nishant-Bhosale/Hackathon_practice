@@ -16,6 +16,21 @@ const UserSchema = new Schema(
 			required: true,
 			unique: true,
 		},
+		age: {
+			type: Number,
+			required: true,
+			min: 7,
+			max: 100,
+		},
+		phone: {
+			type: Number,
+			minLength: 10,
+			maxLength: 10,
+		},
+		gender: {
+			type: String,
+			required: true,
+		},
 		password: {
 			type: String,
 			required: true,
