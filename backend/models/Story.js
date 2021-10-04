@@ -7,8 +7,9 @@ const StorySchema = new Schema(
 		title: {
 			type: String,
 			required: true,
-			maxLength: 25,
+			maxLength: 50,
 			minLength: 3,
+			unique: true,
 		},
 		category: {
 			type: String,
@@ -22,12 +23,17 @@ const StorySchema = new Schema(
 		content: {
 			type: String,
 			required: true,
-			maxLength: 250,
 			minLength: 10,
 		},
 		imageLink: {
 			type: String,
 		},
+		ratings: [
+			{
+				type: mongoose.Schema.Types.ObjectId,
+				ref: "User",
+			},
+		],
 		comments: [
 			{
 				type: mongoose.Schema.Types.ObjectId,
