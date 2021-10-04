@@ -1,5 +1,9 @@
 const express = require("express");
+
+//Inport API middlewares
 const authMiddleware = require("../middleware/authMiddleware.js");
+
+//Importing controllers (API handlers)
 const {
 	createUser,
 	getUserProfile,

@@ -7,7 +7,7 @@ import {
 
 //Importing container (stateful) components
 import Home from './containers/Home/Home';
-import Account from './containers/Account/Account';
+import Login from './containers/Account/Login';
 import Posted from './containers/Posted/Posted';
 
 //Importing presentational (stateless) components
@@ -27,7 +27,7 @@ function App() {
 							<Home />
 						</Route>
 						<Route exact path='/account'>
-							<Account />
+							<Login />
 						</Route>
 						<Route exact path='/userContent'>
 							<Posted />
