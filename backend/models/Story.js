@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const CommentSchema = require("./Comment");
 
 const { Schema } = mongoose;
 
@@ -34,12 +35,7 @@ const StorySchema = new Schema(
 				ref: "User",
 			},
 		],
-		comments: [
-			{
-				type: mongoose.Schema.Types.ObjectId,
-				ref: "Comment",
-			},
-		],
+		comments: [CommentSchema],
 	},
 	{
 		timestamps: true,

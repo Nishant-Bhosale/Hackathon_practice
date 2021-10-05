@@ -2,6 +2,7 @@ const express = require("express");
 require("dotenv").config();
 const connectDB = require("./config/db");
 const authRouter = require("./routes/auth");
+const commentRouter = require("./routes/comments");
 const storyRouter = require("./routes/story");
 const { errorMiddleware, notFound } = require("./middleware/errorMiddleware");
 const PORT = process.env.PORT;
@@ -15,6 +16,7 @@ app.use(express.json());
 
 app.use(authRouter);
 app.use(storyRouter);
+app.use(commentRouter);
 
 app.use(notFound);
 app.use(errorMiddleware);
