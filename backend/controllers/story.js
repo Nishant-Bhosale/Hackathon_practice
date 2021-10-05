@@ -37,4 +37,41 @@ const getStory = asyncHandler(async (req, res) => {
 	res.status(200).json({ story });
 });
 
-module.exports = { addStory, getStory };
+const editStory = asyncHandler(async (req, res) => {
+	const story = await Story.findOne({
+		_id: req.params.id,
+		author: req.user._id,
+	});
+
+	if (!story) {
+		res.status(400);
+		throw new Error("Story not found");
+	}
+
+	const { title, content, imageLink, category } = req.body;
+
+	story.title = title || story.title;
+	story.imageLink = imageLink || story.imageLink;
+	story.content = content || story.content;
+	story.category = category || story.category;
+
+	await story.save();
+
+	res.status(200).json({ story });
+});
+
+const deleteStory = asyncHandler(async (req, res) => {
+	const story = await Story.findOneAndDelete({
+		_id: req.params.id,
+		author: req.user._id,
+	});
+
+	if (!story) {
+		res.status(404);
+		throw new Error("Could not delete story");
+	}
+
+	res.status(400).json({ story });
+});
+
+module.exports = { addStory, getStory, editStory, deleteStory };
