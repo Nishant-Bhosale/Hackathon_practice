@@ -76,7 +76,11 @@ export default function Register() {
                 handleError(err.response)
             }
         }
-        // setFormInput({});
+        setFormInput({});
+        setFileStatus(prev => ({
+            ...prev,
+            loaded: false
+        }));
         addProfile();
     }
 
