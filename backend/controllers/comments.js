@@ -56,3 +56,5 @@ const getComments = asyncHandler(async (req, res) => {
 
 	res.status(200).json({ comments: story.comments });
 });
+
+module.exports = { addComment, deleteComment, getComments };
