@@ -19,7 +19,7 @@
 }
 #signupForm{
     background-color: orange;
-    height: 80vh;
+    height: 100vh;
     width: 35%;
     margin-bottom: 30px;
     display: flex;
@@ -55,4 +55,28 @@ input{
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+#php{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+#phpContainer{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-right: 20px;
+    overflow: hidden;
+}
+#phpContainer:hover{
+    border: 2px solid #DB4437;
+}
+#phpContainer > img{
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
 }

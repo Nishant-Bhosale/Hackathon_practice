@@ -1,5 +1,6 @@
 const express = require("express");
 require("dotenv").config();
+const cors = require('cors');
 const connectDB = require("./config/db");
 const authRouter = require("./routes/auth");
 const commentRouter = require("./routes/comments");
@@ -7,13 +8,18 @@ const storyRouter = require("./routes/story");
 const { errorMiddleware, notFound } = require("./middleware/errorMiddleware");
 const PORT = process.env.PORT;
 
-//Initializing connection to the database
+//Importing Routers
+const profileRouter = require('./routes/addProfile');
+
+//Importing and initializing connection to the database
+const connectDB = require("./config/db");
 connectDB();
 
 const app = express();
-
 app.use(express.json());
+app.use(cors());
 
+app.use(profileRouter)
 app.use(authRouter);
 app.use(storyRouter);
 app.use(commentRouter);
