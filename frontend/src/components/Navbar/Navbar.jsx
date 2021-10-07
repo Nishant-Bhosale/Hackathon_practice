@@ -14,7 +14,7 @@ export default function Navbar() {
                 <a href="/"><span>A</span>rcadian</a>
             </div>
             <div className="name">
-                <span>Welcome Name</span>
+                <span>Welcome Name ....</span>
             </div>
             <ul className="main-nav-items">
                 <li className="main-nav-item"><a href="/">Account</a></li>
