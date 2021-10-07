@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Saved.module.css';
+import  './Saved.module.css';
 
 export default function Saved() {
     return (

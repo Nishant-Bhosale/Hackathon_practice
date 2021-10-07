@@ -1,19 +1,37 @@
 import React from 'react';
-import styles from './Footer.module.css';
+import  './Footer.module.css';
 
 export default function Footer() {
     return (
-        <div id={styles.footerContainer}>
-            <div id={styles.copyInfo}>
-                <span>&copy; 2021 Arcadia &#8482; All rights reserved.</span>
-            </div>
-            <div id={styles.socialHandles}>
-                <ul id={styles.socialList}>
-                    <li><a href="#" className={styles.socials} >INSTAGRAM</a></li>
-                    <li><a href="#" className={styles.socials} >GITHUB</a></li>
-                    <li><a href="#" className={styles.socials} >LINKEDIN</a></li>
-                </ul>
-            </div>
+        <>
+
+<footer>
+    <div className="content">
+      <div className="top">
+        <div className="main-logo">
+          <a href="/"><span>A</span>rcadian</a>
         </div>
+        <div className="media-icons">
+          <a href="/"><i className="fab fa-facebook-f"></i></a>
+          <a href="/"><i className="fab fa-twitter"></i></a>
+          <a href="/"><i className="fab fa-instagram"></i></a>
+          <a href="/"><i className="fab fa-linkedin-in"></i></a>
+          <a href="/"><i className="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    <div className="bottom-details">
+      <div className="bottom_text">
+        <span className="copyright_text">Copyright © 2021 <hr/> <a href="/"><span>A</span>rcadian</a>All rights reserved</span>
+        <span className="policy_terms">
+          <a href="/">Privacy policy</a>
+          <hr/>
+          <a href="/">Terms & condition</a>
+        </span>
+      </div>
+    </div>
+    </div>
+  </footer>
+
+        </>
     )
 }
