@@ -12,6 +12,7 @@ export default function Footer() {
                     <li><a href="#" className={styles.socials} >INSTAGRAM</a></li>
                     <li><a href="#" className={styles.socials} >GITHUB</a></li>
                     <li><a href="#" className={styles.socials} >LINKEDIN</a></li>
+                    <li><a href="#" className={styles.socials} >TWITTER</a></li>
                 </ul>
             </div>
         </div>
