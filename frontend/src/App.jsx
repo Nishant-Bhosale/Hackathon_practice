@@ -20,7 +20,7 @@ function App() {
 	return (
 		<div id={styles.mainContainer}>
 			<Router>
-				<Navbar />
+				<Navbar/>
 				<div id={styles.contentWrap}>
 					<Switch>
 						<Route exact path='/'>

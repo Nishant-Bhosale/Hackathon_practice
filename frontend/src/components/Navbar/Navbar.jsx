@@ -1,29 +1,35 @@
 import React from 'react';
-import styles from './Navbar.module.css';
-import { NavLink, Link } from 'react-router-dom';
+import  styles from './Navbar.module.css';
+import { NavLink, Link } from 'reactrouterdom';
+
+
+
 
 export default function Navbar() {
     return (
-        <div id={styles.navbarContainer}>
-            <div id={styles.navMeta}>
-                <Link className={styles.homeLink} to="/">
-                    <div id={styles.logoContainer}>
-                        <span>Arcadian</span>
-                    </div>
-                </Link>
-                <div id={styles.greetings}>
-                    <span>welcome NAME</span>
-                </div>
+        <>
+        <header className={styles.main}>
+        <nav className="main-nav">
+            <div className="main-logo">
+                <a href="/"><span>A</span>rcadian</a>
             </div>
-            <div id={styles.navListContainer}>
-                <ul id={styles.navList}>
-                    <li className={styles.navLi}><NavLink className={styles.navLink} activeClassName={styles.activeLink} to='/account'>Login</NavLink></li>
-                    <li className={styles.navLi}><NavLink className={styles.navLink} activeClassName={styles.activeLink} to='/userContent'>Posted Content</NavLink></li>
-                    <li className={styles.navLi}><NavLink className={styles.navLink} activeClassName={styles.activeLink} to='/saved'>Saved</NavLink></li>
-                    <li className={styles.navLi}><NavLink className={styles.navLink} activeClassName={styles.activeLink} to='/profile'>Profile</NavLink></li>
-                    <li>THEME</li>
-                </ul>
+            <div className="name">
+                <span>Welcome Name</span>
             </div>
-        </div>
+            <ul className="main-nav-items">
+                <li className="main-nav-item"><a href="/">Account</a></li>
+                <li className="main-nav-item"><a href="/">Collections</a></li>
+                <li className="main-nav-item"><a href="/">Contents</a></li>
+                <li className="main-nav-item"><a href="/">Profile</a></li>
+                <li className="main-nav-item"><a href="/">Theme</a></li>
+            </ul>
+            <div className="burger">
+                <div className="line1"></div>
+                <div className="line2"></div>
+                <div className="line3"></div>
+            </div>
+        </nav>
+    </header>
+        </>
     )
 }

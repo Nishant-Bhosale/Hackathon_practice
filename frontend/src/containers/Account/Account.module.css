@@ -1,5 +1,5 @@
 #formContainer{
-    background-color: skyblue;
+    background-color: rgb(20, 8, 56);
     min-height: calc(100vh - 220px);
     padding: 30px 0;
     display: flex;
@@ -8,7 +8,7 @@
     justify-content: center;
 }
 #loginForm{
-    background-color: yellow;
+    background-color: rgb(20, 8, 56);
     height: 50vh;
     width: 25%;
     margin-bottom: 30px;
@@ -18,7 +18,7 @@
     justify-content: space-evenly;
 }
 #signupForm{
-    background-color: orange;
+    background-color: rgb(20, 8, 56);
     height: 80vh;
     width: 35%;
     margin-bottom: 30px;
@@ -50,7 +50,7 @@ input{
     width: 70%;
 }
 .inputContainer{
-    background-color: yellow;
+    background-color: rgb(20, 8, 56);
     width: 90%;
     display: flex;
     align-items: center;
